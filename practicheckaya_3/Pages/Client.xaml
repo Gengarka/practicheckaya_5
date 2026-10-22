@@ -1,0 +1,13 @@
+﻿<Page x:Class="practicheckaya_3.Pages.Client"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Клиент" Background="White">
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+        <TextBlock Text="Вы успешно вошли!"
+                   Style="{StaticResource HeaderText}"
+                   HorizontalAlignment="Center"
+                   Margin="0,25,0,25"/>
+        <Image Width="360" Height="260" Stretch="Uniform" Source="/Resources/meme.jpg"/>
+        <TextBlock Text="Спасибо, что зашли! :)" FontFamily="Comic Sans MS" FontSize="16" Foreground="#FF541008" HorizontalAlignment="Center" Margin="0,15,0,0"/>
+    </StackPanel>
+</Page>

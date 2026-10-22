@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="93ef76b81eb945579d9bf01eb0eeb0e0" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="ShoesFabricDBModel.Category" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShoesFabricDBModel.Claim" Width="1.5" PointX="5.25" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShoesFabricDBModel.Employee" Width="1.5" PointX="10" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShoesFabricDBModel.Material" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShoesFabricDBModel.MaterialType" Width="1.5" PointX="0.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShoesFabricDBModel.Position" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShoesFabricDBModel.Product" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShoesFabricDBModel.ProductMaterial" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShoesFabricDBModel.Sale" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShoesFabricDBModel.Season" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShoesFabricDBModel.Shop" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShoesFabricDBModel.Supplier" Width="1.5" PointX="10" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShoesFabricDBModel.Supplies" Width="1.5" PointX="12.25" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShoesFabricDBModel.SupplyDetail" Width="1.5" PointX="14.5" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShoesFabricDBModel.Types" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShoesFabricDBModel.UserAuth" Width="1.5" PointX="7.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShoesFabricDBModel.Waste" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
+        <AssociationConnector Association="ShoesFabricDBModel.FK_Product_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="ShoesFabricDBModel.FK_Claim_Shop" ManuallyRouted="false" />
+        <AssociationConnector Association="ShoesFabricDBModel.FK_Employee_Position" ManuallyRouted="false" />
+        <AssociationConnector Association="ShoesFabricDBModel.FK_Employee_UserAuth" ManuallyRouted="false" />
+        <AssociationConnector Association="ShoesFabricDBModel.FK_Material_MaterialType" ManuallyRouted="false" />
+        <AssociationConnector Association="ShoesFabricDBModel.FK_ProductMaterial_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="ShoesFabricDBModel.FK_SupplyDetail_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="ShoesFabricDBModel.FK_Product_Season" ManuallyRouted="false" />
+        <AssociationConnector Association="ShoesFabricDBModel.FK_ProductMaterial_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="ShoesFabricDBModel.FK_Sale_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="ShoesFabricDBModel.FK_Waste_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="ShoesFabricDBModel.FK_Sale_Shop" ManuallyRouted="false" />
+        <AssociationConnector Association="ShoesFabricDBModel.FK_Supplier_UserAuth" ManuallyRouted="false" />
+        <AssociationConnector Association="ShoesFabricDBModel.FK_Supplies_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="ShoesFabricDBModel.FK_SupplyDetail_Supplies" ManuallyRouted="false" />
+        <AssociationConnector Association="ShoesFabricDBModel.FK_Waste_Types" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
