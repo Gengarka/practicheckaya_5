@@ -42,5 +42,6 @@ namespace practicheckaya_3.Models
         public virtual DbSet<Types> Types { get; set; }
         public virtual DbSet<UserAuth> UserAuth { get; set; }
         public virtual DbSet<Waste> Waste { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

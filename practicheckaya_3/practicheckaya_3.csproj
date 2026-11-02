@@ -149,6 +149,9 @@
     <Compile Include="Models\SupplyDetail.cs">
       <DependentUpon>ModelShoes.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\sysdiagrams.cs">
+      <DependentUpon>ModelShoes.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Types.cs">
       <DependentUpon>ModelShoes.tt</DependentUpon>
     </Compile>

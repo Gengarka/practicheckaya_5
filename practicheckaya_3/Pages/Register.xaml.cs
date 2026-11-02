@@ -13,7 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using practicheckaya_3.Models; 
-using PasswordHasherLibrary; 
+using PasswordHasherLibrary;
+using System.Text.RegularExpressions;
 
 namespace practicheckaya_3.Pages
 {
@@ -30,9 +31,34 @@ namespace practicheckaya_3.Pages
             string password = txtPassword.Password;
             string passwordRepeat = txtPasswordRepeat.Password;
 
-            if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password))
+            if (string.IsNullOrEmpty(login))
             {
-                MessageBox.Show("Заполните все поля!");
+                MessageBox.Show("Введите логин!");
+                return;
+            }
+
+            if (!Regex.IsMatch(login, @"^[a-zA-Z0-9_]{4,20}$"))
+            {
+                MessageBox.Show("Логин должен содержать только латинские буквы, цифры и _ (от 4 до 20 символов)!");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Введите пароль!");
+                return;
+            }
+
+            if (password.Length < 6)
+            {
+                MessageBox.Show("Пароль должен содержать минимум 6 символов!");
+                return;
+            }
+
+            // Проверка: хотя бы одна заглавная, одна строчная и одна цифра
+            if (!Regex.IsMatch(password, @"[A-Z]") || !Regex.IsMatch(password, @"[a-z]") || !Regex.IsMatch(password, @"[0-9]"))
+            {
+                MessageBox.Show("Пароль должен содержать хотя бы одну заглавную букву, одну строчную букву и одну цифру!");
                 return;
             }
 
@@ -41,6 +67,7 @@ namespace practicheckaya_3.Pages
                 MessageBox.Show("Пароли не совпадают!");
                 return;
             }
+
 
             try
             {
