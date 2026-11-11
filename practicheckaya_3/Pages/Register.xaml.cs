@@ -55,7 +55,6 @@ namespace practicheckaya_3.Pages
                 return;
             }
 
-            // Проверка: хотя бы одна заглавная, одна строчная и одна цифра
             if (!Regex.IsMatch(password, @"[A-Z]") || !Regex.IsMatch(password, @"[a-z]") || !Regex.IsMatch(password, @"[0-9]"))
             {
                 MessageBox.Show("Пароль должен содержать хотя бы одну заглавную букву, одну строчную букву и одну цифру!");
