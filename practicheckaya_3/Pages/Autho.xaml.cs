@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using PasswordHasherLibrary;
 using practicheckaya_3.Models;
+using practicheckaya_3.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,9 +21,19 @@ namespace practicheckaya_3.Pages
 {
     public partial class Autho : Page
     {
+        private int click = 0;
         public Autho()
         {
             InitializeComponent();
+        }
+        private void GenerateCaptcha()
+        {
+            captchaPanel.Visibility = Visibility.Visible;
+
+            string captchaText = CaptchaGenerator.GenerateCaptchaText(6);
+            tblCaptcha.Text = captchaText;
+
+            txtCaptcha.Clear();
         }
 
         private void btnEnter_Click(object sender, RoutedEventArgs e)
@@ -44,13 +55,33 @@ namespace practicheckaya_3.Pages
 
                 var user = db.UserAuth.FirstOrDefault(u => u.login == login && u.password_hash == hashedInputPassword);
 
-                if (user != null)
+                if (click == 1)
                 {
-                    NavigationService.Navigate(new Client()); 
+                    if (user != null)
+                    {
+                        MessageBox.Show("Вы вошли под: " + user.login);
+                        NavigationService.Navigate(new Client());
+                    }
+                    else
+                    {
+                        MessageBox.Show("Неверный логин или пароль!");
+                        txtPassword.Clear();
+                        GenerateCaptcha();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Неверный логин или пароль!");
+                    if (user != null && txtCaptcha.Text.Trim() == tblCaptcha.Text)
+                    {
+                        MessageBox.Show("Вы вошли под: " + user.login);
+                        NavigationService.Navigate(new Client());
+                    }
+                    else
+                    {
+                        MessageBox.Show("Введите данные заново!");
+                        txtPassword.Clear();
+                        GenerateCaptcha();
+                    }
                 }
             }
             catch (Exception ex)
